@@ -1,18 +1,26 @@
 import logo from "./logo.svg";
 import "./App.css";
-import BasicFunction from "./basic/BasicFunction";
-import ArrowFunction from "./basic/ArrowFunction";
-import BasicHook from "./basic/BasicHook";
-import BasicUseEffect from "./basic/BasicUseEffect";
+import Dashboard from "./features/dashboard";
+import { ThemeProvider } from "styled-components";
+import themes from "./shared/themes";
+
+import { CssBaseline, StyledEngineProvider } from "@mui/material";
+
+const initialState = {
+  isOpen: [], // for active default menu
+  fontFamily: `'Roboto', sans-serif`,
+  borderRadius: 12,
+  opened: true,
+};
 
 function App() {
   return (
-    <>
-      {/* <BasicFunction />
-      <ArrowFunction /> */}
-      {/* <BasicHook /> */}
-      <BasicUseEffect />
-    </>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={themes(initialState)}>
+        <CssBaseline />
+        <Dashboard />
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 
