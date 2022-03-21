@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
   return (
-    <div style={{padding: 100, backgroundColor: 'blue'}}>
+    <div>
       <Outlet />
     </div>
   );
