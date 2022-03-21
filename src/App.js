@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Dashboard from "./features/dashboard";
 import { ThemeProvider } from "styled-components";
 import themes from "./shared/themes";
+import Routes from './shared/routes';
 
 import { CssBaseline, StyledEngineProvider } from "@mui/material";
 
@@ -18,7 +18,7 @@ function App() {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={themes(initialState)}>
         <CssBaseline />
-        <Dashboard />
+        <Routes />
       </ThemeProvider>
     </StyledEngineProvider>
   );
